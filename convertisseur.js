@@ -1,8 +1,3 @@
-function getValue(){
-    var input = document.getElementById("slidebarre").value;
-    alert(input);
-}
-
 languages['6 dots'] = {
 	dotMap: {
 		0: {
@@ -56,4 +51,13 @@ languages['6 dots'] = {
 		"8": [1, 2, 5, 6],
 		"9": [2, 4, 6],
     }
+}
+
+function getValue(){
+	var input = document.getElementById("slidebarre").value;
+	//var convertisseur = document.getElementById(`slidebarre${latinToBraille}`);
+	alert(input);
+
+
+	
 }
