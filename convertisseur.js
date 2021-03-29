@@ -53,9 +53,12 @@ languages['6 dots'] = {
     }
 }
 
+let pre = document.getElementById("preVisu");
+
 function getValue(){
 	var input = document.getElementById("slidebarre").value;
-	//var convertisseur = document.getElementById(`slidebarre${latinToBraille}`);
+	document.getElementById(preVisu).style.visibility='hidden';
+
 	alert(input);
 
 
