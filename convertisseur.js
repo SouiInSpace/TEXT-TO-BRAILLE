@@ -13,7 +13,7 @@ languages['6 dots'] = {
 	},
 	numberPrefix: [6],
 	latinToBraille: {
-		"a": [1],
+		"a": [a.svg],
 		"b": [1,2],
 		"c": [1,4],
 		"d": [1,4,5],
@@ -57,10 +57,5 @@ let pre = document.getElementById("preVisu");
 
 function getValue(){
 	var input = document.getElementById("slidebarre").value;
-	document.getElementById(preVisu).style.visibility='hidden';
-
 	alert(input);
-
-
-	
 }
