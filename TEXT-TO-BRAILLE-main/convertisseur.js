@@ -55,8 +55,8 @@ languages['6 dots'] = {
 
 function getValue(){
 	var input = document.getElementById("slidebarre").value;
-	//var convertisseur = document.getElementById(`slidebarre${latinToBraille}`);
-	alert(input);
+	var convertisseur = document.getElementById(`slidebarre${latinToBraille}`);
+	alert(convertisseur);
 
 
 	
