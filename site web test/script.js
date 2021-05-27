@@ -2,6 +2,7 @@ paper.install(window);
 let svg = null;
 let svgButton = null;
 let divJ = null
+_laCleZ = false;
 $(document).ready( function() {
 
 	let canvas = document.getElementById("paperCanvas")
@@ -74,7 +75,12 @@ $(document).ready( function() {
 			code += ' Y' + Y.toFixed(2)
 		}
 		if(Z != null) {
-			code += ' M' + Z.toFixed(2)
+			if (_laCleZ == true) {
+				code += ' Z' + Z.toFixed(2)
+				_laCleZ = false;
+			}else {
+				code += ' M' + Z.toFixed(2)
+			}
 		}
 		code += ';\r\n'
 		return code
@@ -90,10 +96,6 @@ $(document).ready( function() {
 		}else {
 			return 'G1' + gcodePosition(X, Y, Z)
 		}
-	}
-
-	let gCodePERSER = function(M){
-		return gcodePosition(X,Y,Z)
 	}
 
 	// draw SVG
@@ -179,6 +181,7 @@ $(document).ready( function() {
 		// gcode += gcodeResetPosition(0, 0, 0)
 		gcode += gcodeSetSpeed(braille.speed)
 		if(braille.goToZero) {
+			_laCleZ = true
 			gcode += gcodeMoveTo(0, 0, 0)
 		}
 
@@ -318,7 +321,6 @@ $(document).ready( function() {
 			gcode = gcodeObject.code
 		}
 
-		gcode += gcodeMoveTo(0, 0, headUpPosition)
 		if(braille.goToZero) {
 			gcode += gcodeMoveTo(0, 0, 0)
 		}
