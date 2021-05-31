@@ -80,7 +80,9 @@ $(document).ready( function() {
 				_laCleZ = false;
 			}else {
 				code += ' M' + Z.toFixed(2)
+				code += ';\r\n'
 				code += ' G4 P0.1'
+				code += ';\r\n'
 			}
 		}
 		code += ';\r\n'
